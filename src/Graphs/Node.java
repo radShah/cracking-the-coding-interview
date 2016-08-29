@@ -5,7 +5,8 @@ public class Node {
 	
 	String data;
 	ArrayList<Node> adjacent;
-	boolean visited;
+	boolean visited; // for simple implementations
+	State state;	// for complex state implementations
 	
 	public Node(String data) {
 		this.data = data;
