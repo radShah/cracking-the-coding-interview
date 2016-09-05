@@ -108,6 +108,48 @@ public class BSTNode {
 		}
 	}
 	
+	public BSTNode insertIteratively(BSTNode root, BSTNode newNode) {
+		BSTNode currentNode = root;
+		while (currentNode != null) {
+			if (currentNode == newNode) {
+				return root;
+			} else if (newNode.data > root.data) {
+				if (root.left != null) {
+					currentNode = root.right;
+				} else {
+					root.right = newNode;
+					return root;
+				}
+			} else {
+				if (currentNode.left != null) {
+					currentNode = root.left;
+				} else {
+					root.left = newNode;
+					return root;
+				}
+			}
+		}
+		
+		return root;
+	}
+	
+	public BSTNode insertRecursively(BSTNode root, int data) {
+		if (root == null) {
+			root = new BSTNode(data);
+			root.setLeft(null); root.setRight(null);
+			return root;
+		} else if (data > root.data) {
+			return insertRecursively(root.getRight(), data);
+		} else {
+			return insertRecursively(root.getLeft(), data);
+		}
+	}
+	
+	public BSTNode delete(BSTNode root, int data) {
+		
+		return null;
+	}
+	
 	public static void main (String args[]) {
 		BSTNode root = new BSTNode(10);
 		root.left = new BSTNode(6);
