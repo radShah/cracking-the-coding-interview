@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class FourFive {
-	
-	ArrayList<Integer> inOrderNodes = new ArrayList<Integer>();
-	
+		
 	/** confusion about recusion
 	 * when will it return to the recursive stack, and when will it return out to the user?
 	 * This is wrong! 
@@ -56,10 +54,10 @@ public class FourFive {
 	}
 	
 	public boolean checkIfBST3(TreeNode root) {
-		inOrderNodes.clear();
-		inOrderTraversal(root);
-		for (int i = 0; i < inOrderNodes.size() - 1; i++) {
-			if (inOrderNodes.get(i) > inOrderNodes.get(i+1)) {
+		ArrayList<Integer> inOrderNodes = new ArrayList<Integer>();
+		inOrderTraversal(root, inOrderNodes);
+		for (int i = 1; i < inOrderNodes.size(); i++) {
+			if (inOrderNodes.get(i) < inOrderNodes.get(i - 1)) {
 				return false;
 			}
 		}
@@ -67,11 +65,11 @@ public class FourFive {
 		
 	}
 	
-	public void inOrderTraversal(TreeNode root) {
+	public void inOrderTraversal(TreeNode root, ArrayList<Integer> inOrderNodes) {
 		if (root == null) return;
-		inOrderTraversal(root.getLeft());
+		inOrderTraversal(root.getLeft(), inOrderNodes);
 		inOrderNodes.add(root.getData());
-		inOrderTraversal(root.getRight());
+		inOrderTraversal(root.getRight(), inOrderNodes);
 	}
 	
 	public static void main (String args[]) {
