@@ -29,6 +29,17 @@ public class GraphTraversals {
 		node3.add(new Node("everything."));
 		
 		return node1;
-	}		
+	}
+
+	public static TreeNode createIntegerGraph() {
+		TreeNode root = new TreeNode(10);
+		root.left = new TreeNode(6);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(11);
+		root.right = new TreeNode(15);
+		root.right.left = new TreeNode(12);
+		root.right.right = new TreeNode(17);
+		return root;
+	}
 
 }

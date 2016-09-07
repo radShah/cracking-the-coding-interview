@@ -87,7 +87,5 @@ public class FourFive {
 		} else {
 			System.out.println("NAAAAAA");
 		}
-		
-		
 	}
 }
