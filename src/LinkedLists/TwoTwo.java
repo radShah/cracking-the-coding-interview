@@ -50,6 +50,7 @@ public class TwoTwo {
     /*
      * 2 pointers, p1  at head p2 at k.
      * When p2 as end, p1 at (length - k)
+     * O(n)
      */
 
     public int findKthLastNode3(LinkedList linkedList, int k) {
