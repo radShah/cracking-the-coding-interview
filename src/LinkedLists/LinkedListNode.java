@@ -8,6 +8,15 @@ public class LinkedListNode {
     int data;
     LinkedListNode next;
 
+    public LinkedListNode(int data) {
+        this.data = data;
+        this.next = null;
+    }
+    public LinkedListNode(int data, LinkedListNode next) {
+        this.data = data;
+        this.next = next;
+    }
+
     public int getData() {
         return data;
     }
@@ -23,5 +32,7 @@ public class LinkedListNode {
     public void setNext(LinkedListNode next) {
         this.next = next;
     }
+
+
 
 }
