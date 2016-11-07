@@ -1,20 +1,30 @@
 package StacksAndQueues;
 
+import java.util.LinkedList;
+
 /**
- * Created by radha on 9/25/16.
+ * Created by radha on 11/6/16.
  */
-public class MyQueue<T> {
+public class MyQueue {
+    QueueNode front = new QueueNode();
+    QueueNode back = new QueueNode();
 
-    private class QueueNode {
-        int data;
-        QueueNode next;
-
-        public QueueNode(int data) {
-            this.data = data;
+    public void enqueue(Object data) {
+        QueueNode newNode = new QueueNode(data);
+        if (front == null) {
+            front = newNode;
+        } else {
+            back.next = newNode;
         }
     }
 
-    public void add(QueueNode newNode) {
-
+    public Object dequeue() {
+        if (front != null) {
+            Object data = front.data;
+            front = front.next;
+            return data;
+        } else {
+            return null;
+        }
     }
 }
